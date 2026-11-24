@@ -1,4 +1,4 @@
-# llm-pricing-data
+# llm-provider-price-json
 
 Machine-readable pricing for major LLM providers. JSON files, community-maintained, structured for programmatic use.
 
@@ -56,16 +56,16 @@ A required field is `null` when the provider does not publish it. That is delibe
 
 ```bash
 # Always-latest from main:
-curl https://raw.githubusercontent.com/0xelitesystem/llm-pricing-data/main/data/anthropic.json
+curl https://raw.githubusercontent.com/0xelitesystem/llm-provider-price-json/main/data/anthropic.json
 
 # Pin to a release (recommended for production):
-curl https://raw.githubusercontent.com/0xelitesystem/llm-pricing-data/v2026.05.01/data/anthropic.json
+curl https://raw.githubusercontent.com/0xelitesystem/llm-provider-price-json/v2026.05.01/data/anthropic.json
 ```
 
 ### As a JSON module
 
 ```javascript
-import anthropic from "https://cdn.jsdelivr.net/gh/0xelitesystem/llm-pricing-data@main/data/anthropic.json";
+import anthropic from "https://cdn.jsdelivr.net/gh/0xelitesystem/llm-provider-price-json@main/data/anthropic.json";
 
 const opus = anthropic.find(m => m.model_id === "claude-opus-5");
 const cost = (inputTokens / 1_000_000) * opus.input_per_million_tokens_usd
@@ -78,7 +78,7 @@ const cost = (inputTokens / 1_000_000) * opus.input_per_million_tokens_usd
 import json
 import urllib.request
 
-url = "https://raw.githubusercontent.com/0xelitesystem/llm-pricing-data/main/data/anthropic.json"
+url = "https://raw.githubusercontent.com/0xelitesystem/llm-provider-price-json/main/data/anthropic.json"
 with urllib.request.urlopen(url) as r:
     pricing = json.load(r)
 ```
@@ -131,6 +131,6 @@ MIT. Use the data however you want, including in commercial products.
 
 ## Related
 
-- [prompt-cost-calculator](https://github.com/0xelitesystem/prompt-cost-calculator), calculator that consumes this data
+- [prompt-cost-across-models](https://github.com/0xelitesystem/prompt-cost-across-models), calculator that consumes this data
 - [byok-patterns](https://github.com/0xelitesystem/byok-patterns), reference implementations for BYOK products
-- [prompt-templates](https://github.com/0xelitesystem/prompt-templates), production prompts
+- [failure-mode-prompts](https://github.com/0xelitesystem/failure-mode-prompts), production prompts
