@@ -58,8 +58,8 @@ A required field is `null` when the provider does not publish it. That is delibe
 # Always-latest from main:
 curl https://raw.githubusercontent.com/0xelitesystem/llm-provider-price-json/main/data/anthropic.json
 
-# Pin to a release (recommended for production):
-curl https://raw.githubusercontent.com/0xelitesystem/llm-provider-price-json/v2026.05.01/data/anthropic.json
+# Pin to a commit (recommended for production):
+curl https://raw.githubusercontent.com/0xelitesystem/llm-provider-price-json/809554f001a3f339583de07fd52fb50f04750446/data/anthropic.json
 ```
 
 ### As a JSON module
@@ -106,7 +106,7 @@ Each file's `last_updated` field tells you when it was last verified. If a file 
 
 ## Versioning
 
-Tagged releases (e.g. `v2026.05.01`) snapshot the entire repo on a date. Use these for production builds where you want pricing to be predictable.
+There are no tagged releases yet. For production builds where you want pricing to be predictable, pin to a commit SHA, as in the example above: the file at that commit never changes.
 
 The `main` branch always has the latest data and may change at any time.
 
